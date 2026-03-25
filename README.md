@@ -337,14 +337,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-## 📧 Support
-
-- **Issues:** [GitHub Issues](https://github.com/yourusername/anti-phishing-ext/issues)
-- **Email:** your.email@example.com
-- **Documentation:** [`ARCHITECTURE.md`](ARCHITECTURE.md)
-
----
-
 <div align="center">
 
 **Made with ❤️ for a safer internet**
