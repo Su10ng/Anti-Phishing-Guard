@@ -44,7 +44,7 @@
 
 1. **Clone or download** this repository:
    ```bash
-   git clone https://github.com/yourusername/anti-phishing-ext.git
+   git clone https://github.com/Su10ng/Anti-Phishing-Guard.git
    ```
 
 2. **Open Chrome Extensions**:
