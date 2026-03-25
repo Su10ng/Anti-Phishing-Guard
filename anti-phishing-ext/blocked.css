@@ -1,0 +1,102 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #0a0005;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #e0ddf5;
+}
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(180,30,30,0.18) 0%, transparent 70%);
+}
+
+.box {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  border-radius: 28px;
+  padding: 52px 60px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 80px rgba(200, 30, 30, 0.12);
+}
+
+.shield { font-size: 72px; margin-bottom: 20px; }
+
+h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+}
+
+.domain {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.reason {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.btn-back {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #d93030;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-back:hover { background: #c02020; }
+.btn-back:active { transform: scale(0.98); }
+
+.btn-skip {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.btn-skip:hover { color: rgba(255,255,255,0.6); }
+.btn-skip[style*="display: none"] { display: none !important; margin: 0; padding: 0; }
+
+.btn-unblock {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: color 0.2s;
+  display: none;
+}
+.btn-unblock:hover { color: rgba(255,255,255,0.6); }
+.btn-unblock[style*="display: none"] { display: none !important; }

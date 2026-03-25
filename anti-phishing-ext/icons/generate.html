@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+  Open this file in a browser (e.g. Chrome) to generate the PNG icons.
+  Click the button — three files (icon16.png, icon48.png, icon128.png)
+  will be downloaded automatically. Place them in this icons/ folder.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Icons</title>
+  <style>
+    body { font-family: sans-serif; padding: 32px; background: #111; color: #eee; }
+    button { padding: 12px 24px; font-size: 15px; cursor: pointer;
+             background: #5865f2; color: #fff; border: none; border-radius: 8px; }
+    button:hover { opacity: 0.85; }
+    #preview { margin-top: 24px; }
+    canvas { display: none; }
+  </style>
+</head>
+<body>
+  <h2>🛡️ Anti-Phishing Guard — Icon Generator</h2>
+  <p style="margin:8px 0 20px;opacity:.6">Generates icon16.png, icon48.png, icon128.png from the SVG source.</p>
+  <button onclick="generateAll()">Generate &amp; Download Icons</button>
+  <div id="preview"></div>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const SVG_PATH = 'icon.svg';
+
+    async function generateIcon(size) {
+      const canvas = document.getElementById('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, size, size);
+
+      const img = new Image();
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = SVG_PATH;
+      });
+
+      ctx.drawImage(img, 0, 0, size, size);
+
+      // Preview
+      const preview = document.createElement('div');
+      preview.style.display = 'inline-block';
+      preview.style.margin = '12px';
+      preview.style.textAlign = 'center';
+      preview.innerHTML = `<canvas width="${size}" height="${size}" style="background:#222;border-radius:4px;display:block"></canvas><div style="font-size:12px;margin-top:4px;opacity:.6">${size}×${size}</div>`;
+      const previewCanvas = preview.querySelector('canvas');
+      previewCanvas.getContext('2d').drawImage(canvas, 0, 0);
+      document.getElementById('preview').appendChild(preview);
+
+      // Download
+      const a = document.createElement('a');
+      a.download = `icon${size}.png`;
+      a.href = canvas.toDataURL('image/png');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Small delay between downloads
+      await new Promise(r => setTimeout(r, 400));
+    }
+
+    async function generateAll() {
+      document.getElementById('preview').innerHTML = '';
+      for (const size of [16, 48, 128]) {
+        await generateIcon(size);
+      }
+    }
+  </script>
+</body>
+</html>

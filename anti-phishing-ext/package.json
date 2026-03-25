@@ -1,0 +1,9 @@
+{
+  "name": "anti-phishing-guard",
+  "version": "1.0.0",
+  "description": "Browser extension — anti-phishing protection with whitelist, domain age, and homograph detection",
+  "private": true,
+  "scripts": {
+    "icons": "start icons/generate.html"
+  }
+}

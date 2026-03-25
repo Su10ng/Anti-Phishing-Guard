@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Anti-Phishing Guard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">Anti-Phishing Guard</span>
+      </div>
+      <label class="toggle" id="toggle-label">
+        <input type="checkbox" id="main-toggle" checked>
+        <span class="toggle-track"></span>
+      </label>
+    </header>
+
+    <div class="status-card" id="status-card">
+      <div class="status-icon" id="status-icon">🔄</div>
+      <div class="status-info">
+        <div class="status-domain" id="status-domain">…</div>
+        <div class="status-reason" id="status-reason">…</div>
+        <div class="status-age"   id="status-age"></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-trust" id="btn-trust">…</button>
+      <button class="btn btn-block" id="btn-block">…</button>
+    </div>
+
+    <!-- Security report panel (hidden by default) -->
+    <div class="report-panel" id="report-panel" hidden>
+      <div id="report-criteria"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-buttons">
+        <button class="btn-settings" id="btn-settings">…</button>
+        <button class="btn-report"   id="btn-report">…</button>
+      </div>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
